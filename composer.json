@@ -1,0 +1,22 @@
+{
+    "name": "kris/leetcode",
+    "authors": [
+        {
+            "name": "ktunprasert",
+            "email": "ktunprasert@outlook.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "LeetCode\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+   "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
