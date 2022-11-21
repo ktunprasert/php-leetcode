@@ -16,7 +16,7 @@ class Solution
         }
 
         $charMap = [];
-        for ($i = 0; $i < strlen($s); $i++) {
+        foreach (range(0, strlen($s) - 1) as $i) {
             if (isset($charMap[$s[$i]])) {
                 $charMap[$s[$i]]++;
             } else {
@@ -24,7 +24,7 @@ class Solution
             }
         }
 
-        for ($j = 0; $j < strlen($t); $j++) {
+        foreach (range(0, strlen($t) - 1) as $j) {
             if (!isset($charMap[$t[$j]])) {
                 return false;
             } else {
