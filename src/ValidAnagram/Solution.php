@@ -1,5 +1,7 @@
 <?php
 
+namespace LeetCode\ValidAnagram;
+
 class Solution
 {
     /**
@@ -7,7 +9,7 @@ class Solution
      * @param String $t
      * @return Boolean
      */
-    function isAnagram($s, $t)
+    function isAnagram($s, $t): bool
     {
         if (strlen($s) !== strlen($t)) {
             return false;
@@ -15,7 +17,11 @@ class Solution
 
         $charMap = [];
         for ($i = 0; $i < strlen($s); $i++) {
-            $charMap[$s[$i]]++;
+            if (isset($charMap[$s[$i]])) {
+                $charMap[$s[$i]]++;
+            } else {
+                $charMap[$s[$i]] = 1;
+            }
         }
 
         for ($j = 0; $j < strlen($t); $j++) {
@@ -33,5 +39,3 @@ class Solution
         return count($charMap) === 0;
     }
 }
-
-echo "\n" . (new Solution())->isAnagram('anagram', 'gramana');
