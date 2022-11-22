@@ -10,19 +10,19 @@ class ValidAnagramTest extends TestCase
     private string $solveMethod = "isAnagram";
 
     /** @dataProvider validAnagrams */
-    public function test_it_passes_valid_anagram(string $first, string $second): void
+    public function test_it_passes_valid_anagram(string ...$params): void
     {
         $solver = new Solution();
 
-        $this->assertTrue($solver->isAnagram($first, $second));
+        $this->assertTrue($solver->{$this->solveMethod}(...$params));
     }
 
     /** @dataProvider invalidAnagrams */
-    public function test_it_fails_invalid_anagrams(string $first, string $second): void
+    public function test_it_fails_invalid_anagrams(string ...$params): void
     {
         $solver = new Solution();
 
-        $this->assertFalse($solver->isAnagram($first, $second));
+        $this->assertFalse($solver->{$this->solveMethod}(...$params));
     }
 
     public function validAnagrams(): array
