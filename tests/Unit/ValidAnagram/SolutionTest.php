@@ -1,12 +1,14 @@
 <?php
 
-namespace Tests\ValidAnagram;
+namespace Tests\Unit\ValidAnagram;
 
 use LeetCode\ValidAnagram\Solution;
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 
 class ValidAnagramTest extends TestCase
 {
+    private string $solveMethod = "isAnagram";
+
     /** @dataProvider validAnagrams */
     public function test_it_passes_valid_anagram(string $first, string $second): void
     {
